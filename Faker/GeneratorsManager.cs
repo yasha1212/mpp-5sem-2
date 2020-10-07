@@ -15,49 +15,9 @@ namespace Faker
 
         public GeneratorsManager()
         {
-            generators = LoadGenerators();
-        }
+            var loader = new PluginsLoader<IGenerator>(PLUGINS_PATH);
 
-        private List<IGenerator> LoadGenerators()
-        {
-            var dirInfo = new DirectoryInfo(PLUGINS_PATH);
-
-            if (!dirInfo.Exists)
-            {
-                dirInfo.Create();
-            }
-
-            var plugins = new List<IGenerator>();
-            var files = Directory.GetFiles(PLUGINS_PATH, "*.dll");
-
-            foreach (var file in files)
-            {
-                Type[] types;
-                var asm = Assembly.LoadFrom(file);
-
-                try
-                {
-                    types = asm.GetTypes();
-                }
-                catch (ReflectionTypeLoadException)
-                {
-                    types = null;
-                }
-
-                if (types != null)
-                {
-                    foreach (var type in types)
-                    {
-                        if (type.GetInterface(typeof(IGenerator).Name) != null)
-                        {
-                            var plugin = asm.CreateInstance(type.FullName) as IGenerator;
-                            plugins.Add(plugin);
-                        }
-                    }
-                }
-            }
-
-            return plugins;
+            generators = loader.Load();
         }
 
         public bool CanGenerate(Type type)
