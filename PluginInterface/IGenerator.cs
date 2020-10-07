@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace PluginInterface
 {
-    public class Class1
+    public interface IGenerator
     {
+        object Next(Type type);
+
+        bool CanGenerate(Type type);
     }
 }
