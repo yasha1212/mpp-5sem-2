@@ -111,9 +111,8 @@ namespace Faker
             var parameters = new List<object>();
 
             constructor.GetParameters()
-                .Select(p => p.GetType())
                 .ToList()
-                .ForEach(t => parameters.Add(Generate(t)));
+                .ForEach(t => parameters.Add(Generate(t.ParameterType)));
 
             return parameters.ToArray();
         }
