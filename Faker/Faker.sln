@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginInterface", "..\Plugi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseTypesGenerator", "..\BaseTypesGenerator\BaseTypesGenerator.csproj", "{478825A4-7E76-46F6-BD5B-1E670ABE3AA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateTypeGenerator", "..\DateTypeGenerator\DateTypeGenerator.csproj", "{3E736533-699F-4E42-A35A-CF4529156DDE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateTimeGenerator", "..\DateTypeGenerator\DateTimeGenerator.csproj", "{3E736533-699F-4E42-A35A-CF4529156DDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

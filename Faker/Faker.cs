@@ -20,7 +20,7 @@ namespace Faker
             processedDTO = new Stack<Type>();
         }
 
-        private bool IsDTO(Type type)
+        public bool IsDTO(Type type)
         {
             return type.GetCustomAttributes(typeof(DTOAttribute), false).Length == 1;
         }
