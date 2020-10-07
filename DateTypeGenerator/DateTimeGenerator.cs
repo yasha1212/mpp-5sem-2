@@ -21,7 +21,8 @@ namespace DateTimeGenerator
 
         public object Next(Type type)
         {
-            return new DateTime(random.Next(0, DateTime.Now.Year), random.Next(1, 12), random.Next(1, 30));
+            return new DateTime(random.Next(0, DateTime.Now.Year), random.Next(1, 12), random.Next(1, 30),
+                random.Next(0, 24), random.Next(0,60), random.Next(0, 60));
         }
     }
 }

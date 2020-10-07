@@ -40,7 +40,7 @@ namespace BaseTypesGenerator
             int count = random.Next(1, 20);
             string result = "";
 
-            for (int i = 0; i < count; count++)
+            for (int i = 0; i < count; i++)
             {
                 result += (char)random.Next('A', 'z');
             }
